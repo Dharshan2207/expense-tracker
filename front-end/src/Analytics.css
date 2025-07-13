@@ -1,0 +1,49 @@
+.analytics-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.analytics-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.analytics-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background-color: #f8f8f8;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #444;
+}
+
+.analytics-card h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.analytics-card .amount {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.highlight-card {
+  background-color: #000;
+  color: #fff;
+}
+
+.extra-info {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #777;
+}
