@@ -1,25 +1,14 @@
-# Start from a base Java image
-FROM openjdk:17-jdk-slim
+# Use correct Java version
+FROM eclipse-temurin:17-jdk
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the Maven build files
-COPY .mvn .mvn
-COPY mvnw .
-COPY pom.xml .
+# Copy everything
+COPY . .
 
-# Download dependencies
-RUN ./mvnw dependency:go-offline -B
+# Run Maven build
+RUN ./mvnw -B -DskipTests clean package
 
-# Copy the source code
-COPY src ./src
-
-# Package the application
-RUN ./mvnw package -DskipTests
-
-# Expose port 8080
-EXPOSE 8080
-
-# Start the Spring Boot app
+# Run the app
 CMD ["java", "-jar", "target/*.jar"]
